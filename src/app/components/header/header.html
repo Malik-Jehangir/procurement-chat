@@ -1,19 +1,25 @@
 <header>
 
   <div class="brand">
+
+    <button
+      class="menu-button"
+      type="button"
+      (click)="toggleMobileMenu()"
+      aria-label="Open navigation"
+    >
+      ☰
+    </button>
+
     <div class="brand-icon">
       P
     </div>
 
     <div>
-      <strong>
-        ProcureAI
-      </strong>
-
-      <small>
-        Procurement Assistant
-      </small>
+      <strong>ProcureAI</strong>
+      <small>Procurement Assistant</small>
     </div>
+
   </div>
 
 
@@ -30,3 +36,68 @@
   </div>
 
 </header>
+
+
+@if (mobileMenuOpen()) {
+
+  <div
+    class="mobile-overlay"
+    (click)="closeMobileMenu()"
+  ></div>
+
+  <aside class="mobile-menu">
+
+    <div class="mobile-menu-header">
+
+      <strong>Navigation</strong>
+
+      <button
+        type="button"
+        (click)="closeMobileMenu()"
+      >
+        ✕
+      </button>
+
+    </div>
+
+    <nav>
+
+      <button
+        [class.active]="procurement.activeSection() === 'new-request'"
+        (click)="openSection('new-request')"
+      >
+        ＋ New Request
+      </button>
+
+      <button
+        [class.active]="procurement.activeSection() === 'requests'"
+        (click)="openSection('requests')"
+      >
+        ▦ My Requests
+      </button>
+
+      <button
+        [class.active]="procurement.activeSection() === 'suppliers'"
+        (click)="openSection('suppliers')"
+      >
+        ♙ Suppliers
+      </button>
+
+      <button
+        [class.active]="procurement.activeSection() === 'purchase-orders'"
+        (click)="openSection('purchase-orders')"
+      >
+        ▤ Purchase Orders
+      </button>
+
+      <button
+        [class.active]="procurement.activeSection() === 'invoices'"
+        (click)="openSection('invoices')"
+      >
+        BHD Invoices
+      </button>
+
+    </nav>
+
+  </aside>
+}
