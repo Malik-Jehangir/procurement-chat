@@ -49,7 +49,7 @@ export class Records {
       category: 'Event Furniture',
       location: 'Bahrain',
       rating: '4.8 / 5',
-      status: 'Approved',
+      status: 'Certified By ProcureAI',
       note: 'Selected supplier for 100-chair procurement.'
     },
     {
@@ -58,7 +58,7 @@ export class Records {
       category: 'Event Furniture',
       location: 'Bahrain',
       rating: '4.2 / 5',
-      status: 'Approved',
+      status: 'Certified By ProcureAI',
       note: 'Quotation received: BHD 600.'
     },
     {
@@ -67,7 +67,7 @@ export class Records {
       category: 'IT Equipment',
       location: 'Manama',
       rating: '4.6 / 5',
-      status: 'Approved',
+      status: 'Certified By ProcureAI',
       note: 'Preferred supplier for computer equipment.'
     },
     {
@@ -76,7 +76,7 @@ export class Records {
       category: 'Printing',
       location: 'Bahrain',
       rating: '4.4 / 5',
-      status: 'Under Review',
+      status: 'Not certified yet',
       note: 'Currently undergoing supplier assessment.'
     }
   ];
