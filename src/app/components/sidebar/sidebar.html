@@ -1,0 +1,47 @@
+<aside>
+
+  <nav>
+
+    <button
+      [class.active]="procurement.activeSection() === 'new-request'"
+      (click)="openSection('new-request')"
+    >
+      <span>＋</span>
+      New Request
+    </button>
+
+    <button
+      [class.active]="procurement.activeSection() === 'requests'"
+      (click)="openSection('requests')"
+    >
+      <span>▦</span>
+      My Requests
+    </button>
+
+    <button
+      [class.active]="procurement.activeSection() === 'suppliers'"
+      (click)="openSection('suppliers')"
+    >
+      <span>♙</span>
+      Suppliers
+    </button>
+
+    <button
+      [class.active]="procurement.activeSection() === 'purchase-orders'"
+      (click)="openSection('purchase-orders')"
+    >
+      <span>▤</span>
+      Purchase Orders
+    </button>
+
+    <button
+      [class.active]="procurement.activeSection() === 'invoices'"
+      (click)="openSection('invoices')"
+    >
+      <span>BHD </span>
+      Invoices
+    </button>
+
+  </nav>
+
+</aside>

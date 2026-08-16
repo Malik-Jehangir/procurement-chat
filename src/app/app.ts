@@ -1,12 +1,27 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+
+import { Header } from './components/header/header';
+import { Sidebar } from './components/sidebar/sidebar';
+import { Chat } from './components/chat/chat';
+import { WorkflowProgress } from './components/workflow-progress/workflow-progress';
+import { Records } from './components/records/records';
+
+import { ProcurementService } from './services/procurement';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    Header,
+    Sidebar,
+    Chat,
+    WorkflowProgress,
+    Records
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('procurement-chat');
+
+  procurement = inject(ProcurementService);
+
 }

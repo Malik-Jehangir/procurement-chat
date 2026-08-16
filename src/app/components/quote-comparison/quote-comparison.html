@@ -1,0 +1,97 @@
+<div class="quote-wrapper">
+
+  <div class="quote-heading">
+
+    <div>
+      <span class="eyebrow">
+        RFQ RESULTS
+      </span>
+
+      <h3>
+        Supplier comparison
+      </h3>
+
+      <p>
+        3 quotations received
+      </p>
+    </div>
+
+  </div>
+
+  <div class="supplier-grid">
+
+    @for (
+      supplier of procurement.suppliers;
+      track supplier.id
+    ) {
+
+      <article
+        class="supplier-card"
+        [class.recommended]="supplier.recommended"
+      >
+
+        @if (supplier.recommended) {
+
+          <span class="recommendation">
+            ★ Recommended
+          </span>
+
+        }
+
+        <h4>
+          {{ supplier.name }}
+        </h4>
+
+        <div class="price">
+          BHD {{ supplier.price + supplier.delivery }}
+        </div>
+
+        <div class="supplier-details">
+
+          <span>
+            Base quote
+            <strong>
+              BHD {{ supplier.price }}
+            </strong>
+          </span>
+
+          <span>
+            Delivery
+            <strong>
+              {{
+                supplier.delivery === 0
+                  ? 'Included'
+                  : 'BHD ' + supplier.delivery
+              }}
+            </strong>
+          </span>
+
+          <span>
+            Rating
+            <strong>
+              ★ {{ supplier.rating }}
+            </strong>
+          </span>
+
+          <span>
+            Delivery time
+            <strong>
+              {{ supplier.deliveryTime }}
+            </strong>
+          </span>
+
+        </div>
+
+        <button
+          (click)="selectSupplier(supplier)"
+        >
+          Select supplier
+        </button>
+
+      </article>
+
+    }
+
+  </div>
+
+</div>

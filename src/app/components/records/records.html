@@ -1,0 +1,341 @@
+<div class="records-page">
+
+  @if (procurement.activeSection() === 'requests') {
+
+    <div class="page-header">
+      <div>
+        <span class="eyebrow">PROCUREMENT</span>
+        <h1>My Requests</h1>
+        <p>View your procurement requests and their current status.</p>
+      </div>
+    </div>
+
+
+    <div class="records-grid">
+
+      @for (request of requests; track request.id) {
+
+        <article class="record-card">
+
+          <div class="card-top">
+
+            <div>
+              <span class="record-id">
+                {{ request.id }}
+              </span>
+
+              <h3>
+                {{ request.title }}
+              </h3>
+            </div>
+
+            <span class="status">
+              {{ request.status }}
+            </span>
+
+          </div>
+
+
+          <div class="details">
+
+            <div>
+              <span>Quantity</span>
+              <strong>{{ request.quantity }}</strong>
+            </div>
+
+            <div>
+              <span>Location</span>
+              <strong>{{ request.location }}</strong>
+            </div>
+
+            <div>
+              <span>Required Date</span>
+              <strong>{{ request.date }}</strong>
+            </div>
+
+            <div>
+              <span>Amount</span>
+              <strong>{{ request.amount }}</strong>
+            </div>
+
+          </div>
+
+
+          <div class="card-actions">
+
+            <button class="secondary-button">
+              View Details
+            </button>
+
+            <button class="download-button">
+              ↓ Download
+            </button>
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+  }
+
+
+
+  @if (procurement.activeSection() === 'suppliers') {
+
+    <div class="page-header">
+      <div>
+        <span class="eyebrow">SUPPLIER MANAGEMENT</span>
+        <h1>Suppliers</h1>
+        <p>Approved and evaluated procurement suppliers.</p>
+      </div>
+    </div>
+
+
+    <div class="records-grid">
+
+      @for (supplier of suppliers; track supplier.id) {
+
+        <article class="record-card">
+
+          <div class="card-top">
+
+            <div>
+
+              <span class="record-id">
+                {{ supplier.id }}
+              </span>
+
+              <h3>
+                {{ supplier.name }}
+              </h3>
+
+            </div>
+
+            <span class="status">
+              {{ supplier.status }}
+            </span>
+
+          </div>
+
+
+          <div class="details">
+
+            <div>
+              <span>Category</span>
+              <strong>{{ supplier.category }}</strong>
+            </div>
+
+            <div>
+              <span>Location</span>
+              <strong>{{ supplier.location }}</strong>
+            </div>
+
+            <div>
+              <span>Supplier Rating</span>
+              <strong>★ {{ supplier.rating }}</strong>
+            </div>
+
+          </div>
+
+
+          <div class="record-note">
+            {{ supplier.note }}
+          </div>
+
+
+          <div class="card-actions">
+
+            <button class="secondary-button">
+              View Supplier
+            </button>
+
+            <button class="download-button">
+              ↓ Download
+            </button>
+
+          </div>
+
+        </article>
+      }
+
+    </div>
+
+  }
+
+
+
+  @if (procurement.activeSection() === 'purchase-orders') {
+
+    <div class="page-header">
+
+      <div>
+        <span class="eyebrow">PURCHASING</span>
+        <h1>Purchase Orders</h1>
+        <p>Purchase orders created through the procurement process.</p>
+      </div>
+
+    </div>
+
+
+    <div class="records-grid">
+
+      @for (po of purchaseOrders; track po.id) {
+
+        <article class="record-card">
+
+          <div class="card-top">
+
+            <div>
+
+              <span class="record-id">
+                {{ po.id }}
+              </span>
+
+              <h3>
+                {{ po.description }}
+              </h3>
+
+            </div>
+
+            <span class="status">
+              {{ po.status }}
+            </span>
+
+          </div>
+
+
+          <div class="details">
+
+            <div>
+              <span>Supplier</span>
+              <strong>{{ po.supplier }}</strong>
+            </div>
+
+            <div>
+              <span>Quantity</span>
+              <strong>{{ po.quantity }}</strong>
+            </div>
+
+            <div>
+              <span>PO Date</span>
+              <strong>{{ po.date }}</strong>
+            </div>
+
+            <div>
+              <span>Total Value</span>
+              <strong>{{ po.amount }}</strong>
+            </div>
+
+          </div>
+
+
+          <div class="card-actions">
+
+            <button class="secondary-button">
+              View PO
+            </button>
+
+            <button class="download-button">
+              ↓ Download PO
+            </button>
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+  }
+
+
+
+  @if (procurement.activeSection() === 'invoices') {
+
+    <div class="page-header">
+
+      <div>
+        <span class="eyebrow">ACCOUNTS PAYABLE</span>
+        <h1>Invoices</h1>
+        <p>Supplier invoices and matching status.</p>
+      </div>
+
+    </div>
+
+
+    <div class="records-grid">
+
+      @for (invoice of invoices; track invoice.id) {
+
+        <article class="record-card">
+
+          <div class="card-top">
+
+            <div>
+
+              <span class="record-id">
+                {{ invoice.id }}
+              </span>
+
+              <h3>
+                {{ invoice.description }}
+              </h3>
+
+            </div>
+
+            <span class="status">
+              {{ invoice.status }}
+            </span>
+
+          </div>
+
+
+          <div class="details">
+
+            <div>
+              <span>Purchase Order</span>
+              <strong>{{ invoice.po }}</strong>
+            </div>
+
+            <div>
+              <span>Supplier</span>
+              <strong>{{ invoice.supplier }}</strong>
+            </div>
+
+            <div>
+              <span>Invoice Amount</span>
+              <strong>{{ invoice.amount }}</strong>
+            </div>
+
+            <div>
+              <span>Matching</span>
+              <strong>{{ invoice.match }}</strong>
+            </div>
+
+          </div>
+
+
+          <div class="card-actions">
+
+            <button class="secondary-button">
+              View Invoice
+            </button>
+
+            <button class="download-button">
+              ↓ Download Invoice
+            </button>
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+  }
+
+</div>

@@ -1,0 +1,98 @@
+<section class="chat">
+
+  <div
+    class="messages"
+    #messagesContainer
+  >
+
+    @for (
+      message of procurement.messages();
+      track message.id
+    ) {
+
+      <div
+        class="message-row"
+        [class.user-row]="message.sender === 'user'"
+      >
+
+        @if (message.sender === 'assistant') {
+          <div class="avatar assistant-avatar">
+            AI
+          </div>
+        }
+
+        <div
+          class="message-content"
+          [class.user-message]="message.sender === 'user'"
+          [class.assistant-message]="message.sender === 'assistant'"
+        >
+
+          <p>
+            {{ message.text }}
+          </p>
+
+          @if (message.options) {
+
+            <div class="message-options">
+
+              @for (
+                option of message.options;
+                track option.value
+              ) {
+
+                <button
+                  (click)="selectOption(option.value)"
+                >
+                  {{ option.label }}
+                </button>
+
+              }
+
+            </div>
+          }
+
+          <span class="message-time">
+            {{
+              message.timestamp
+                | date:'shortTime'
+            }}
+          </span>
+
+        </div>
+
+      </div>
+    }
+
+    @if (
+      procurement.currentStage() === 'quotations'
+    ) {
+
+      <app-quote-comparison />
+
+    }
+
+  </div>
+
+
+ <div class="chat-input">
+
+  <input
+    type="text"
+    [(ngModel)]="userInput"
+    (keyup.enter)="sendMessage()"
+    placeholder="Type your answer..."
+    aria-label="Procurement message"
+  />
+
+  <button
+    type="button"
+    class="send-button"
+    (click)="sendMessage()"
+    aria-label="Send message"
+  >
+    ➜
+  </button>
+
+</div>
+
+</section>
