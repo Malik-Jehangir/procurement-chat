@@ -22,14 +22,16 @@ export class Header {
   }
 
   openSection(
-    section:
-      'new-request' |
-      'requests' |
-      'suppliers' |
-      'purchase-orders' |
-      'invoices'
-  ): void {
-    this.procurement.setActiveSection(section);
-    this.closeMobileMenu();
-  }
+  section:
+    'new-request' |
+    'dashboard' |
+    'requests' |
+    'suppliers' |
+    'purchase-orders' |
+    'invoices'
+): void {
+
+  this.procurement.setActiveSection(section);
+  this.closeMobileMenu();
+}
 }

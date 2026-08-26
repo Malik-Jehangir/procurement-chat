@@ -11,15 +11,16 @@ export class Sidebar {
 
   procurement = inject(ProcurementService);
 
-  openSection(
-    section:
-      'new-request' |
-      'requests' |
-      'suppliers' |
-      'purchase-orders' |
-      'invoices'
-  ): void {
+ openSection(
+  section:
+    'new-request' |
+    'dashboard' |
+    'requests' |
+    'suppliers' |
+    'purchase-orders' |
+    'invoices'
+): void {
 
-    this.procurement.setActiveSection(section);
-  }
+  this.procurement.setActiveSection(section);
+}
 }

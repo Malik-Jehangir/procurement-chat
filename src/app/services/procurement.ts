@@ -31,6 +31,7 @@ export class ProcurementService {
 
   readonly activeSection = signal<
   'new-request' |
+  'dashboard' |
   'requests' |
   'suppliers' |
   'purchase-orders' |
@@ -40,11 +41,13 @@ export class ProcurementService {
 setActiveSection(
   section:
     'new-request' |
+    'dashboard' |
     'requests' |
     'suppliers' |
     'purchase-orders' |
     'invoices'
 ): void {
+
   this.activeSection.set(section);
 }
 

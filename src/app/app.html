@@ -16,7 +16,17 @@
 
         <app-chat />
 
-      } @else {
+      } 
+      
+      @else if (
+          procurement.activeSection() === 'dashboard'
+        ) {
+
+          <app-dashboard />
+
+        }
+
+      @else {
 
         <app-records />
 

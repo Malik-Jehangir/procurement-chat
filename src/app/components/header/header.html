@@ -70,6 +70,13 @@
       </button>
 
       <button
+        [class.active]="procurement.activeSection() === 'dashboard'"
+        (click)="openSection('dashboard')"
+      >
+        ▦ Dashboard
+      </button>
+
+      <button
         [class.active]="procurement.activeSection() === 'requests'"
         (click)="openSection('requests')"
       >

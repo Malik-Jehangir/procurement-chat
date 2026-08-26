@@ -5,6 +5,7 @@ import { Sidebar } from './components/sidebar/sidebar';
 import { Chat } from './components/chat/chat';
 import { WorkflowProgress } from './components/workflow-progress/workflow-progress';
 import { Records } from './components/records/records';
+import { Dashboard } from './components/dashboard/dashboard';
 
 import { ProcurementService } from './services/procurement';
 
@@ -15,7 +16,8 @@ import { ProcurementService } from './services/procurement';
     Sidebar,
     Chat,
     WorkflowProgress,
-    Records
+    Records,
+    Dashboard
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

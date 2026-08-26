@@ -11,6 +11,14 @@
     </button>
 
     <button
+  [class.active]="procurement.activeSection() === 'dashboard'"
+  (click)="openSection('dashboard')"
+>
+  <span>▦</span>
+  Dashboard
+</button>
+
+    <button
       [class.active]="procurement.activeSection() === 'requests'"
       (click)="openSection('requests')"
     >
