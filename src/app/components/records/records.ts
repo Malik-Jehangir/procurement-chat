@@ -49,7 +49,7 @@ export class Records {
       category: 'Event Furniture',
       location: 'Bahrain',
       rating: '4.8 / 5',
-      status: 'Certified By ProcureAI',
+      status: 'Certified By Aqvyr',
       note: 'Selected supplier for 100-chair procurement.'
     },
     {
@@ -58,7 +58,7 @@ export class Records {
       category: 'Event Furniture',
       location: 'Bahrain',
       rating: '4.2 / 5',
-      status: 'Certified By ProcureAI',
+      status: 'Certified By Aqvyr',
       note: 'Quotation received: BHD 600.'
     },
     {
@@ -67,7 +67,7 @@ export class Records {
       category: 'IT Equipment',
       location: 'Manama',
       rating: '4.6 / 5',
-      status: 'Certified By ProcureAI',
+      status: 'Certified By Aqvyr',
       note: 'Preferred supplier for computer equipment.'
     },
     {
